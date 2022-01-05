@@ -17,7 +17,7 @@ def test_scores_service(app_url):
     print(app_url)
     chrome_options = webdriver.ChromeOptions()
     # webdriver remote docker-selenium from https://github.com/SeleniumHQ/docker-selenium
-    chrome_driver = webdriver.Remote(command_executor='http://7facc12a9650:4444', options=chrome_options)
+    chrome_driver = webdriver.Remote(command_executor='http://selenium-chrome:4444', options=chrome_options)
     # get site's score
     chrome_driver.get(app_url)
     score_xpath = "//*[@id=\"score\"]"
@@ -40,7 +40,7 @@ def main_function():
     main_function to call our tests function. The main function will return -1 as an OS exit
     code if the tests failed and 0 if they passed.
     """
-    code = test_scores_service(' http://47827049ce03:5000/')
+    code = test_scores_service(' http://worldofgames:5000/')
     if code:
         print(0)
         return 0
