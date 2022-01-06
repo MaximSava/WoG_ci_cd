@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 echo "Creating container image"
 docker build -t "$1":"$2" .
